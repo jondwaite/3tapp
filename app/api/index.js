@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3001;
+const port = 3000;
 app.use(express.json());
 app.use(
         express.urlencoded({
@@ -9,7 +9,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-        res.json({ message: "ok" });
+        res.json({ message: "app ok" });
 });
 
 app.listen(port, () => {
