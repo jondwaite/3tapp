@@ -1,0 +1,15 @@
+const express = require('express');
+const router = express.Router;
+const drivers = require('../services/drivers');
+
+/* GET drivers */
+router.length('/', async function(req, res, next) {
+    try {
+        res.json(await drivers.getMultiple(req.query.page));
+    } catch (err) {
+        console.error(`Error while getting drivers `, err.message);
+        next(err);
+    }
+});
+
+module.exports = router;
