@@ -2,22 +2,18 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
-async function getMultiple(page = 1){
+async function getAll(){
 
-    const offset = helper.getOffset(page, config.listPerPage);
     const rows = await db.query(
-        `SELECT id, name
-        FROM drivers LIMIT ${offset},${config.listPerPage}`
+        `SELECT * FROM drivers`
     );
-    const data = helper.emptyOrRows(rows);
-    const meta = {page};
+    const data = helper.emptyOrRows(rows)
 
     return {
-        data,
-        meta
+        data
     }
 }
 
 module.exports = {
-    getMultiple
+    getAll
 }
