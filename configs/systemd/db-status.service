@@ -1,5 +1,5 @@
 [Unit]
-Description=Database Status Service
+Description=3tapp - Database Status Service
 Documentation=https://github.com/jondwaite/3tapp
 After=network.target
 

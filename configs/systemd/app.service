@@ -1,5 +1,5 @@
 [Unit]
-Description=app.js - API Service
+Description=3tapp - API Service
 Documentation=https://github.com/jondwaite/3tapp
 After=network.target
 
