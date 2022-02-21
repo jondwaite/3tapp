@@ -4,7 +4,7 @@ Documentation=https://github.com/jondwaite/3tapp
 After=network.target
 
 [Service]
-Environment=NODE_PORT=3000
+Environment=NODE_PORT=3002
 Type=simple
 User=photon
 ExecStart=/usr/bin/node /home/photon/3tapp/app/api/app.js

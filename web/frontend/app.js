@@ -9,7 +9,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-        res.json({ message: "web ok" });
+        res.json({ message: "Frontend web server ok" });
 });
 
 app.listen(port, () => {
