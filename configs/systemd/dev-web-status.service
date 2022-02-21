@@ -5,6 +5,7 @@ After=network.target
 
 [Service]
 Environment=NODE_PORT=3001
+WorkingDirectory=/home/photon/3tapp/web/status
 Type=simple
 User=photon
 ExecStart=/home/photon/.npm-packages/bin/nodemon /home/photon/3tapp/web/status/status.js

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const app = express();
 const port = 3002;
@@ -12,7 +14,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-        res.json({ message: "app ok" });
+        res.json({ message: "app ok dbuser=" + process.env.DB_USER });
 });
 app.use("/drivers", driversRouter);
 
