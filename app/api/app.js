@@ -14,7 +14,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-        res.json({ message: "app ok dbuser=" + process.env.DB_USER });
+        res.json({ message: "app ok" });
 });
 app.use("/drivers", driversRouter);
 
