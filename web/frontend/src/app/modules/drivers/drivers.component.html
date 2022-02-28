@@ -3,5 +3,21 @@
 </div>
 <mat-divider></mat-divider>
 <div>
-    Drivers Table
+    <table >
+        <tr>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Number</th>
+            <th>Ticker</th>
+            <th>D.o.B.</th>
+        </tr>
+        <tr *ngFor="let driver of drivers">
+            <td><a href={{driver.url}} target="_blank">{{driver.forename}} {{driver.surname}}</a></td>
+            <td>{{driver.nationality}}</td>
+            <td>{{driver.number}}</td>
+            <td>{{driver.code}}</td>
+            <td>{{driver.dob}}</td>
+        </tr>        
+    </table>
+
 </div>
