@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../shared/api.service';
 
 @Component({
   selector: 'app-drivers',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriversComponent implements OnInit {
 
-  constructor() { }
+  drivers: any;
 
-  ngOnInit(): void {
+  constructor(private apiService: ApiService) { }
+
+  ngOnInit() {
+    this.apiService.getAllDrivers().subscribe((data: any ) => {
+      this.drivers = data.data;
+      console.log(data.data);
+    });
   }
 
 }

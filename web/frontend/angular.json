@@ -71,6 +71,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "latest-angular:build",
+            "publicHost": "192.168.25.233",
+            "port": 3000
+          },
           "configurations": {
             "production": {
               "browserTarget": "frontend:build:production"
@@ -79,7 +84,7 @@
               "browserTarget": "frontend:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
