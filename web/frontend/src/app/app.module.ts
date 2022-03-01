@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DefaultModule } from './layouts/default/default.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    DefaultModule
+    DefaultModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

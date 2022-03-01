@@ -5,7 +5,8 @@ const circuits = require('../services/circuits');
 /* GET circuits */
 router.get('/', async function(req, res, next) {
     try {
-        res.json(await circuits.getAll());
+        let returnedData = await circuits.getAll()
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting circuits `, err.message);
         next(err);
@@ -14,7 +15,8 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:circuitId', async function(req, res, next) {
     try {
-        res.json(await circuits.getOne(req.params.circuitId));
+        let returnedData = await circuits.getOne(req.params.circuitId);
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting circuit with Id=${req.params.circuitId}`, err.message);
         next(err);

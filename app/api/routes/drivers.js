@@ -5,7 +5,8 @@ const drivers = require('../services/drivers');
 /* GET drivers */
 router.get('/', async function(req, res, next) {
     try {
-        res.json(await drivers.getAll());
+        let returnedData = await drivers.getAll();
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting drivers `, err.message);
         next(err);
@@ -14,7 +15,8 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:driverId', async function(req, res, next) {
     try {
-        res.json(await drivers.getOne(req.params.driverId));
+        let returnedData = await drivers.getOne(req.params.driverId);
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting driver with Id=${req.params.driverId}`, err.message);
         next(err);
