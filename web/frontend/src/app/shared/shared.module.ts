@@ -7,7 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatTableModule
+    MatPaginatorModule
   ],
   exports: [
     HeaderComponent,

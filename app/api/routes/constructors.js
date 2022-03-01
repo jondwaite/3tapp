@@ -5,7 +5,8 @@ const constructors = require('../services/constructors');
 /* GET constructors */
 router.get('/', async function(req, res, next) {
     try {
-        res.json(await constructors.getAll());
+        let returnedData = await constructors.getAll()
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting constructors `, err.message);
         next(err);
@@ -14,7 +15,8 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:constructorId', async function(req, res, next) {
     try {
-        res.json(await constructors.getOne(req.params.constructorId));
+        let returnedData = await constructors.getOne(req.params.constructorId)
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting constructor with Id=${req.params.constructorId}`, err.message);
         next(err);

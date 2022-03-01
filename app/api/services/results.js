@@ -1,6 +1,5 @@
 const db = require('./db');
 const helper = require('../helper');
-const config = require('../config');
 
 async function getAll(){
 
@@ -17,7 +16,7 @@ async function getAll(){
 async function getOne(resultId){
 
     const row = await db.query(
-        `SELECT * FROM results WHERE resultsId = ${resultId}`
+        `SELECT * FROM results WHERE resultId = ${resultId}`
     );
     const data = helper.emptyOrRows(row);
 

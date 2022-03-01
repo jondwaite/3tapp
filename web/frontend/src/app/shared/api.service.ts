@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Time } from '@angular/common';
 
 export interface circuit {
   circuitid: number,
@@ -26,6 +27,45 @@ export interface driver {
   url: string
 }
 
+export interface constructor {
+  constructorid: number,
+  constructorref: string,
+  name: string,
+  nationality: string,
+  url: string
+}
+
+export interface race {
+  raceid: number,
+  year: number,
+  round: number,
+  circuitid: number,
+  name: string,
+  date: Date,
+  time: Time,
+  url: string
+}
+
+export interface result {
+  resultid: number,
+  raceid: number,
+  driverid: number,
+  constructorid: number,
+  number: number,
+  grid: number,
+  position: number,
+  positiontext: string,
+  points: number,
+  laps: number,
+  time: string,
+  milliseconds: number,
+  fastestlap: number,
+  rank: number,
+  fastestlaptime: string,
+  fastestlapspeed: string,
+  statusid: number
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,15 +75,23 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAllDrivers(){
-    return this.httpClient.get(this.REST_API_SERVER+"/drivers");
-  }
-
   GetDrivers(): Observable<driver[]>{
     return this.httpClient.get<driver[]>(this.REST_API_SERVER + "/drivers");
   }
 
   GetCircuits(): Observable<circuit[]>{
     return this.httpClient.get<circuit[]>(this.REST_API_SERVER + "/circuits");
+  }
+
+  GetRaces(): Observable<race[]>{
+    return this.httpClient.get<race[]>(this.REST_API_SERVER + "/races");
+  }
+
+  GetResults(): Observable<result[]>{
+    return this.httpClient.get<result[]>(this.REST_API_SERVER + "/results");
+  }
+
+  GetConstructors(): Observable<constructor[]>{
+    return this.httpClient.get<constructor[]>(this.REST_API_SERVER + "/constructors");
   }
 }

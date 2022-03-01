@@ -26,7 +26,7 @@ Drivers Table Schema
 export class DriversComponent implements OnInit {
 
   data: driver[] = [];
-  columnsToDisplay = ['code', 'forename', 'surname', 'number', 'nationality']
+  columnsToDisplay = ['fullname', 'code', 'number', 'nationality', 'dob']
 
   constructor(private apiService: ApiService) { 
 

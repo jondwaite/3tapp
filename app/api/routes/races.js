@@ -5,7 +5,8 @@ const races = require('../services/races');
 /* GET races */
 router.get('/', async function(req, res, next) {
     try {
-        res.json(await races.getAll());
+        let returnedData = await races.getAll();
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting races `, err.message);
         next(err);
@@ -14,7 +15,8 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:raceId', async function(req, res, next) {
     try {
-        res.json(await races.getOne(req.params.raceId));
+        let returnedData = await races.getOne(req.params.raceId);
+        res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting race with Id=${req.params.raceId}`, err.message);
         next(err);
