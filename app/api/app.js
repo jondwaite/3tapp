@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3002;
 
@@ -11,6 +12,7 @@ const racesRouter = require("./routes/races");
 const resultsRouter = require("./routes/results");
 
 app.use(express.json());
+app.use(cors());
 app.set('view engine', 'hbs');
 app.use(
         express.urlencoded({
