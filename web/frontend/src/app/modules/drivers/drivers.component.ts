@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { ApiService, driver } from '../../shared/api.service';
 
 /*
@@ -25,15 +28,50 @@ Drivers Table Schema
 })
 export class DriversComponent implements OnInit {
 
-  data: driver[] = [];
-  columnsToDisplay = ['fullname', 'code', 'number', 'nationality', 'dob']
+  data: any;
+  columnsToDisplay = ['forename', 'surname', 'code', 'number', 'nationality', 'dob', 'age']
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private apiService: ApiService) { 
 
     this.apiService.GetDrivers().subscribe(x => {
-      this.data = x;
+      this.data = new MatTableDataSource<driver>(x);
+      this.data.paginator = this.paginator;
+      this.data.sort = this.sort;
+      const sortState: Sort = {active: 'surname', direction: 'asc'};
+      this.sort.active = sortState.active;
+      this.sort.direction = sortState.direction;
+      this.sort.disableClear = true;
+      this.sort.sortChange.emit(sortState);
       console.log(this.data);
     })
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.data.filter = filterValue.trim().toLowerCase();
+  }
+
+  getCurrentAge(dob: Date) {
+    var birthdate = new Date(dob)
+    var today = new Date();
+    var years = today.getFullYear() - birthdate.getFullYear();
+    var months = today.getMonth() - birthdate.getMonth();
+    if (months < 0) {
+      months += 12; 
+      years--;
+    }
+    if (months === 0 && today.getDate() < birthdate.getDate()) {
+      years--;
+    }
+
+    if (months === 1) {
+      return (years+" Yrs "+months+" Mth")
+    } else {
+      return(years+" Yrs "+months+" Mths")
+    }
 
   }
 
@@ -41,3 +79,4 @@ export class DriversComponent implements OnInit {
   }
 
 }
+

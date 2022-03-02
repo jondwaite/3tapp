@@ -1,12 +1,39 @@
 table {
     padding: 10,20,20,10px;
+    width: 95%;
 }
 
-.mat-column-fullname {
+h1 {
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: rgb(159, 87, 218);
+    color: white;
+}
+
+.mat-paginator {
+    display: flex;
+    justify-content: left;
+}
+
+.mat-form-field {
+    width: 95%;
+}
+
+.mat-raised-button {
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.mat-column-forename {
     width: 150px;
 }
 
 .mat-column-number {
     text-align: center;
-    width: 50px;
+    width: 60px;
+}
+
+.mat-column-nationality {
+    width: 100px;
 }
