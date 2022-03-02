@@ -5,6 +5,7 @@ After=network.target
 
 [Service]
 Environment=NODE_PORT=3002
+WorkingDirectory=/home/photon/3tapp/app/api
 Type=simple
 User=photon
 ExecStart=/usr/bin/node /home/photon/3tapp/app/api/app.js
