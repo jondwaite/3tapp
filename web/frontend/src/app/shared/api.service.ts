@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Time } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 export interface circuit {
   circuitid: number,
@@ -71,7 +72,7 @@ export interface result {
 })
 export class ApiService {
 
-  private REST_API_SERVER = configEnv.app_server;
+  private REST_API_SERVER = `http://${environment.APP_HOSTNAME}/api`;
 
   constructor(private httpClient: HttpClient) { }
 

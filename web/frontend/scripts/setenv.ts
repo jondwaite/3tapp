@@ -15,13 +15,23 @@ const targetPath = isProduction
 const environmentFileContent = `
 export const environment = {
     production: ${isProduction},
-    API_URL: "${process.env.API_URL}",
+    DB_HOSTNAME: "${process.env['DB_HOSTNAME']}",
+    APP_HOSTNAME: "${process.env['APP_HOSTNAME']}",
+    WEB_HOSTNAME: "${process.env['WEB_HOSTNAME']}",
+    PROJECT: "${process.env['PROJECT']}",
+    DEPLOYMENT: "${process.env['DEPLOYMENT']}",
+    HOST: "${process.env['HOST']}",
+    DEPLOY_AT: "${process.env['DEPLOY_AT']}",
+    DEPLOY_BY: "${process.env['DEPLOY_BY']}",
+    BLUEPRINT_ID: "${process.env['BLUEPRINT_ID']}",
+    BLUEPRINT: "${process.env['BLUEPRINT']}",
+    VERSION: "${process.env['VERSION']}"
 };
 `;
 
-writeFile(targetPath, environmentFileContent, function (err)) {
+writeFile(targetPath, environmentFileContent, function (err) {
     if (err) {
         console.log(err);
     }
     console.log(`Wrote variables to ${targetPath}`);
-}
+});
