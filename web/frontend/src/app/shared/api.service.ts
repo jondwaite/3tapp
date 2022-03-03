@@ -72,7 +72,7 @@ export interface result {
 })
 export class ApiService {
 
-  private REST_API_SERVER = `http://${environment.APP_HOSTNAME}/api`;
+  private REST_API_SERVER = `http://${environment.APP_IPADDR}/api`;
 
   constructor(private httpClient: HttpClient) { }
 

@@ -17,6 +17,7 @@ export const environment = {
     production: ${isProduction},
     DB_HOSTNAME: "${process.env['DB_HOSTNAME']}",
     APP_HOSTNAME: "${process.env['APP_HOSTNAME']}",
+    APP_IPADDR: "${process.env['APP_IPADDR']}",
     WEB_HOSTNAME: "${process.env['WEB_HOSTNAME']}",
     PROJECT: "${process.env['PROJECT']}",
     DEPLOYMENT: "${process.env['DEPLOYMENT']}",
