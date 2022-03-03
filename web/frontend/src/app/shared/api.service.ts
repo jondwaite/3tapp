@@ -71,7 +71,7 @@ export interface result {
 })
 export class ApiService {
 
-  private REST_API_SERVER = "http://192.168.25.233/api";
+  private REST_API_SERVER = configEnv.app_server;
 
   constructor(private httpClient: HttpClient) { }
 

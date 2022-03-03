@@ -8,7 +8,7 @@ Environment=NODE_PORT=3000
 WorkingDirectory=/home/photon/3tapp/web/frontend
 Type=simple
 User=photon
-ExecStart=/usr/bin/node /home/photon/3tapp/web/frontend/app.js
+ExecStart=/home/photon/3tapp/web/frontend/node_modules/.bin/ng serve
 Restart=on-failure
 
 [Install]
