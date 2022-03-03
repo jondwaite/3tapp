@@ -7,7 +7,13 @@ import { RacesComponent } from './modules/races/races.component';
 import { ResultsComponent } from './modules/results/results.component';
 import { ConstructorsComponent } from './modules/constructors/constructors.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
+  path: '',
+  pathMatch: 'full',
+  redirectTo: '/drivers'
+  },
+  {
   path: '',
   component: DefaultComponent,
   children: [{
