@@ -5,7 +5,7 @@ const circuits = require('../services/circuits');
 /* GET circuits */
 router.get('/', async function(req, res, next) {
     try {
-        let returnedData = await circuits.getAll()
+        let returnedData = await circuits.getAllAug()
         res.json(returnedData.data);
     } catch (err) {
         console.error(`Error while getting circuits `, err.message);

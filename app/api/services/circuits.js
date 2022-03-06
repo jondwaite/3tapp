@@ -1,6 +1,5 @@
 const db = require('./db');
 const helper = require('../helper');
-const config = require('../config');
 
 async function getAll(){
 
@@ -9,9 +8,16 @@ async function getAll(){
     );
     const data = helper.emptyOrRows(rows);
 
-    return {
-        data
-    }
+    return { data }
+}
+
+async function getAllAug(){
+    const rows = await db.query(
+        `SELECT *,(SELECT COUNT(*) FROM races WHERE circuitId=circuits.circuitId) as Races FROM circuits;`
+    );
+    const data = helper.emptyOrRows(rows);
+
+    return { data }
 }
 
 async function getOne(circuitId){
@@ -21,12 +27,11 @@ async function getOne(circuitId){
     );
     const data = helper.emptyOrRows(row);
 
-    return {
-        data
-    }
+    return { data }
 }
 
 module.exports = {
     getAll,
+    getAllAug,
     getOne
 }

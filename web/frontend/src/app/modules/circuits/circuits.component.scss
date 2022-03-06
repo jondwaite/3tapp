@@ -1,8 +1,22 @@
 table {
-    padding: 10,20,20,10px;
+  padding: 10px,20px,20px,10px;
+  width: 95%;
 }
 
 .mat-header-cell {
     font-weight: bold;
 }
 
+.mat-paginator {
+  display: flex;
+  justify-content: left;
+}
+
+.mat-form-field {
+  width: 95%;
+}
+
+.mat-raised-button {
+  line-height: 24px;
+  font-size: 12px;
+}

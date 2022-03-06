@@ -29,12 +29,12 @@ Drivers Table Schema
 export class DriversComponent implements OnInit {
 
   data: any;
-  columnsToDisplay = ['forename', 'surname', 'code', 'number', 'nationality', 'dob', 'age']
+  columnsToDisplay = ['forename', 'surname', 'code', 'number', 'nationality', 'dob', 'age', 'url']
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private apiService: ApiService) { 
+  constructor(private apiService: ApiService) {
 
     this.apiService.GetDrivers().subscribe(x => {
       this.data = new MatTableDataSource<driver>(x);
@@ -60,11 +60,12 @@ export class DriversComponent implements OnInit {
     var years = today.getFullYear() - birthdate.getFullYear();
     var months = today.getMonth() - birthdate.getMonth();
     if (months < 0) {
-      months += 12; 
+      months += 12;
       years--;
     }
     if (months === 0 && today.getDate() < birthdate.getDate()) {
       years--;
+      months += 11;
     }
 
     if (months === 1) {

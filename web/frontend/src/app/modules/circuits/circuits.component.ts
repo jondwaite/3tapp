@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { ApiService, circuit } from 'src/app/shared/api.service';
 
 /*
@@ -25,15 +28,30 @@ Circuits Table Schema
 })
 export class CircuitsComponent implements OnInit {
 
-  data: circuit[] = [];
-  columnsToDisplay = ['name', 'location', 'country', 'alt']
+  data: any;
+  columnsToDisplay = ['name', 'location', 'country', 'alt', 'Races', 'url']
 
-  constructor(private apiService: ApiService) { 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private apiService: ApiService) {
 
     this.apiService.GetCircuits().subscribe(x => {
-      this.data = x;
+      this.data = new MatTableDataSource<circuit>(x);
+      this.data.paginator = this.paginator;
+      this.data.sort = this.sort;
+      const sortState: Sort = {active: 'name', direction: 'asc'}
+      this.sort.active = sortState.active;
+      this.sort.direction = sortState.direction;
+      this.sort.disableClear = true;
+      this.sort.sortChange.emit(sortState);
       console.log(this.data);
     })
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.data.filter = filterValue.trim().toLowerCase();
   }
 
   ngOnInit(): void {

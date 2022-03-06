@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     MatPaginatorModule,
     MatListModule,
+    MatChipsModule,
     RouterModule
   ],
   exports: [
