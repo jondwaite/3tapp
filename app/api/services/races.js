@@ -2,33 +2,43 @@ const db = require('./db');
 const helper = require('../helper');
 
 async function getAll(){
-
     const rows = await db.query(
         `SELECT * FROM races`
     );
     const data = helper.emptyOrRows(rows);
+    return { data };
+};
 
-    return {
-        data
-    }
-}
+async function getYears(){
+    const rows = await db.query(
+        `SELECT DISTINCT(year) from races ORDER BY year ASC;`
+    );
+    const data = helper.emptyOrRows(rows);
+    return { data };
+};
 
-async function getOne(raceId){
-
+async function getYear(year){
     const row = await db.query(
-        `SELECT * FROM races WHERE raceId = ${raceId}`
+        `SELECT * FROM races WHERE year = ${year} ORDER BY round ASC;`
     );
     const data = helper.emptyOrRows(row);
+    return { data };
+};
 
-    return {
-        data
-    }
-}
+async function getById(id){
+    const row = await db.query(
+        `SELECT * FROM races WHERE raceId = ${id};`
+    )
+    const data = helper.emptyOrRows(row);
+    return { data };
+};
 
 module.exports = {
     getAll,
-    getOne
-}
+    getYears,
+    getYear,
+    getById
+};
 
 // Queries:
 // select distinct(year) from races ORDER BY year ASC; - Year dropdown for races
