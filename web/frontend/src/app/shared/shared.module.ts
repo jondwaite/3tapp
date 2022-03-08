@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     CommonModule,
@@ -29,12 +29,12 @@ import { RouterModule } from '@angular/router';
     MatPaginatorModule,
     MatListModule,
     MatChipsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
   ]
 })
 export class SharedModule { }

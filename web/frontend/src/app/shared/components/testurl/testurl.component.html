@@ -1,0 +1,3 @@
+<div [ngClass]="(this.connected$ | async) ? 'success' : 'error'">
+[{{this.host}}:{{ (this.connected$ | async) ? 'Success' : 'Failure' }}]
+</div>
