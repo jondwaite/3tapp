@@ -1,0 +1,22 @@
+<h1>{{this.driverData.forename + ' ' + this.driverData.surname}}</h1>
+
+<div class="picture">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/320px-Lewis_Hamilton_2016_Malaysia_2.jpg" height="200">
+</div>
+
+<table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="item">
+    <th mat-header-cell *matHeaderCellDef>Item</th>
+    <td mat-cell *matCellDef="let element">{{element.item}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef>Value</th>
+    <td mat-cell *matCellDef="let element">{{element.value}}</td>
+  </ng-container>
+
+  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+</table>
+

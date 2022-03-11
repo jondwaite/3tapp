@@ -29,7 +29,7 @@ Drivers Table Schema
 export class DriversComponent implements OnInit {
 
   data: any;
-  columnsToDisplay = ['forename', 'surname', 'code', 'number', 'nationality', 'dob', 'age', 'url']
+  columnsToDisplay = ['forename', 'surname', 'code', 'number', 'nationality', 'dob', 'age', 'url'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

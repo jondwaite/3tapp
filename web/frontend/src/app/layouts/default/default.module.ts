@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ConnectionService } from 'src/app/shared/connection.service';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { DriverdetailComponent } from 'src/app/modules/driverdetail/driverdetail.component';
 import { DriversComponent } from 'src/app/modules/drivers/drivers.component';
 import { CircuitsComponent } from 'src/app/modules/circuits/circuits.component';
 import { ConstructorsComponent } from 'src/app/modules/constructors/constructors.component';
@@ -20,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     DefaultComponent,
+    DriverdetailComponent,
     DriversComponent,
     CircuitsComponent,
     ConstructorsComponent,

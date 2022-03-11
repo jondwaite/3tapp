@@ -80,6 +80,14 @@ export class ApiService {
     return this.httpClient.get<driver[]>(this.REST_API_SERVER + "/drivers");
   }
 
+  GetDriver(driverId): Observable<driver>{
+    return this.httpClient.get<driver>(this.REST_API_SERVER + "/drivers/" + driverId);
+  }
+
+  GetDriverDetails(driverId): Observable<any[]>{
+    return this.httpClient.get<any[]>(this.REST_API_SERVER + "/drivers/" + driverId + "/results");
+  }
+
   GetCircuits(): Observable<circuit[]>{
     return this.httpClient.get<circuit[]>(this.REST_API_SERVER + "/circuits");
   }

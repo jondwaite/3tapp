@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { CircuitsComponent } from './modules/circuits/circuits.component';
+import { DriverdetailComponent } from './modules/driverdetail/driverdetail.component';
 import { DriversComponent } from './modules/drivers/drivers.component';
 import { RacesComponent } from './modules/races/races.component';
 import { ResultsComponent } from './modules/results/results.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   path: '',
   component: DefaultComponent,
   children: [{
+    path: 'driverdetail/:id',
+    component: DriverdetailComponent
+  },
+  {
     path: 'drivers',
     component: DriversComponent
   },

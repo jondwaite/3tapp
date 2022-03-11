@@ -1,0 +1,239 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$dark-blue: rgb(10,24,57); // Dark Blue
+$datacom-blue: rgb(0,36,112); // Datacom Blue
+$light-blue: rgb(118,196,255); // Light Blue
+$extra-light-blue: rgb(229,241,255); // Extra Light Blue
+$white: rgb(255,255,255); // White
+$dark-blue: rgb(10,24,57); // Dark Blue
+$datacom-blue: rgb(0,36,112); // Datacom Blue
+$light-blue: rgb(118,196,255); // Light Blue
+$accent-pink: rgb(230,0,96); // Accent Pink
+$datacom-black: rgb(21,21,21); // Datacom Black
+$darkest-grey: rgb(51,51,51); // Darkest Grey
+$dark-grey: rgb(102,102,102); // Dark Grey
+$grey: rgb(153,153,153); // Grey
+$light-grey: rgb(218,218,218); // Light Grey
+$extra-light-grey: rgb(240,240,240); // Extra Light Grey
+$action-blue: rgb(0,85,255); // Action Blue
+$action-blue-hover: rgb(0,63,188); // Action Blue Hover
+$error-red: rgb(207,54,78); // Error Red
+$rag-red: rgb(207,54,78); // RAG Red
+$rag-amber: rgb(240,176,44); // RAG Amber
+$rag-green: rgb(64,181,73); // RAG Green
+$cobalt-blue: rgb(0,71,186); // Cobalt Blue
+$sky-blue: rgb(0,167,225); // Sky Blue
+$extra-light-blue: rgb(229,241,255); // Extra Light Blue
+$accent-orange: rgb(240,76,44); // Accent Orange
+$accent-sea-blue: rgb(0,173,187); // Accent Sea Blue
+$white: rgb(255,255,255); // White
+$cobalt-blue-80: rgb(72,109,194); // Cobalt Blue 80%
+$cobalt-blue-60: rgb(118,146,210); // Cobalt Blue 60%
+$cobalt-blue-40: rgb(163,182,224); // Cobalt Blue 40%
+$cobalt-blue-20: rgb(209,218,240); // Cobalt Blue 20%
+$sky-blue-80: rgb(109,182,227); // Sky Blue 80%
+$sky-blue-60: rgb(146,201,234); // Sky Blue 60%
+$sky-blue-40: rgb(182,218,241); // Sky Blue 40%
+$sky-blue-20: rgb(219,237,248); // Sky Blue 20%
+$extra-light-blue-80: rgb(234,243,255); // Extra Light Blue 80%
+$extra-light-blue-60: rgb(239,246,255); // Extra Light Blue 60%
+$extra-light-blue-40: rgb(245,249,255); // Extra Light Blue 40%
+$extra-light-blue-20: rgb(250,252,255); // Extra Light Blue 20%
+$dark-blue-80: rgb(59,70,96); // Dark Blue 80%
+$dark-blue-60: rgb(108,116,136); // Dark Blue 60%
+$dark-blue-40: rgb(157,162,175); // Dark Blue 40%
+$dark-blue-20: rgb(206,208,215); // Dark Blue 20%
+$datacom-blue-80: rgb(51,79,140); // Datacom Blue 80%
+$datacom-blue-60: rgb(102,123,169); // Datacom Blue 60%
+$datacom-blue-40: rgb(153,167,198); // Datacom Blue 40%
+$datacom-blue-20: rgb(204,211,226); // Datacom Blue 20%
+$light-blue-80: rgb(145,207,255); // Light Blue 80%
+$light-blue-60: rgb(172,219,255); // Light Blue 60%
+$light-blue-40: rgb(200,231,255); // Light Blue 40%
+$light-blue-20: rgb(227,243,255); // Light Blue 20%
+$accent-pink-80: rgb(235,51,127); // Accent Pink 80%
+$accent-pink-60: rgb(240,102,159); // Accent Pink 60%
+$accent-pink-40: rgb(245,153,191); // Accent Pink 40%
+$accent-pink-20: rgb(250,204,223); // Accent Pink 20%
+$accent-sea-blue-80: rgb(113,188,199); // Accent Sea Blue 80%
+$accent-sea-blue-60: rgb(148,205,213); // Accent Sea Blue 60%
+$accent-sea-blue-40: rgb(184,221,227); // Accent Sea Blue 40%
+$accent-sea-blue-20: rgb(219,239,241); // Accent Sea Blue 20%
+$accent-orange-80: rgb(243,111,86); // Accent Orange 80%
+$accent-orange-60: rgb(246,147,128); // Accent Orange 60%
+$accent-orange-40: rgb(249,183,170); // Accent Orange 40%
+$accent-orange-20: rgb(252,219,212); // Accent Orange 20%
+
+$datacom-palette-darkblue: (
+    50 : #e2e3e7,
+    100 : #b6bac4,
+    200 : #858c9c,
+    300 : #545d74,
+    400 : #2f3b57,
+    500 : $dark-blue,
+    600 : #091533,
+    700 : #07112c,
+    800 : #050e24,
+    900 : #030817,
+    A100 : #5773ff,
+    A200 : #2448ff,
+    A400 : #0028f0,
+    A700 : #0024d6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : $white,
+        300 : $white,
+        400 : $white,
+        500 : $white,
+        600 : $white,
+        700 : $white,
+        800 : $white,
+        900 : $white,
+        A100 : $white,
+        A200 : $white,
+        A400 : $white,
+        A700 : $white,
+    )
+);
+
+$datacom-palette-blue: (
+    50 : #e0e5ee,
+    100 : #b3bdd4,
+    200 : #8092b8,
+    300 : #4d669b,
+    400 : #264585,
+    500 : #002470,
+    600 : #002068,
+    700 : #001b5d,
+    800 : #001653,
+    900 : #000d41,
+    A100 : #7684ff,
+    A200 : #4356ff,
+    A400 : #1028ff,
+    A700 : #0019f6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #ffffff,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$datacom-palette-lightblue: (
+  50 : #eff8ff,
+  100 : #d6edff,
+  200 : #bbe2ff,
+  300 : #9fd6ff,
+  400 : #8bcdff,
+  500 : #76c4ff,
+  600 : #6ebeff,
+  700 : #63b6ff,
+  800 : #59afff,
+  900 : #46a2ff,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #edf6ff,
+  A700 : #d4e8ff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$datacom-palette-accent: (
+    50 : #fce0ec,
+    100 : #f8b3cf,
+    200 : #f380b0,
+    300 : #ee4d90,
+    400 : #ea2678,
+    500 : #e60060,
+    600 : #e30058,
+    700 : #df004e,
+    800 : #db0044,
+    900 : #d50033,
+    A100 : #fffcfd,
+    A200 : #ffc9d3,
+    A400 : #ff96a9,
+    A700 : #ff7d94,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$datacom-palette-secondary-accent: (
+    50 : #fdeae6,
+    100 : #fbc9c0,
+    200 : #f8a696,
+    300 : #f5826b,
+    400 : #f2674c,
+    500 : #f04c2c,
+    600 : #ee4527,
+    700 : #ec3c21,
+    800 : #e9331b,
+    900 : #e52410,
+    A100 : #ffffff,
+    A200 : #ffe1df,
+    A400 : #ffb1ac,
+    A700 : #ff9a92,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-custom-primary: mat-palette($datacom-palette-blue);
+$my-custom-accent: mat-palette($datacom-palette-accent);
+$my-custom-warn: mat-palette($datacom-palette-secondary-accent);
+$my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+@include angular-material-theme($my-custom-theme);
