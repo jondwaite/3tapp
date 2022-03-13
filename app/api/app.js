@@ -10,6 +10,7 @@ const constructorsRouter = require("./routes/constructors");
 const circuitsRouter = require("./routes/circuits");
 const racesRouter = require("./routes/races");
 const resultsRouter = require("./routes/results");
+const wikiImagesRouter = require("./routes/wikiimages");
 
 app.use(express.json());
 app.use(cors());
@@ -28,6 +29,7 @@ app.use("/constructors", constructorsRouter);
 app.use("/circuits", circuitsRouter);
 app.use("/races", racesRouter);
 app.use("/results", resultsRouter);
+app.use("/imagelink", wikiImagesRouter);
 
 app.use((err, req, res, next) => {
         const statusCode = err.statusCode || 500;

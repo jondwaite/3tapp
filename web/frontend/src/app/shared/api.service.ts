@@ -103,4 +103,8 @@ export class ApiService {
   GetConstructors(): Observable<constructor[]>{
     return this.httpClient.get<constructor[]>(this.REST_API_SERVER + "/constructors");
   }
+
+  GetFromName(driverName: string): Observable<any[]>{
+    return this.httpClient.get<any[]>(this.REST_API_SERVER + '/imagelink/' + driverName);
+  }
 }
