@@ -72,7 +72,7 @@ export interface result {
 })
 export class ApiService {
 
-  private REST_API_SERVER = `http://${environment.APP_IPADDR}:3002/api`;
+  private REST_API_SERVER = `http://${environment.APP_IPADDR}:3002`;
 
   constructor(private httpClient: HttpClient) { }
 
