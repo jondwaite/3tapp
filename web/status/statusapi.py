@@ -98,10 +98,12 @@ def home():
 
     respvalues = {}
 
-    respvalues["role"] = 'db'
+    respvalues["role"] = 'web'
     respvalues["uptime"] = uptime()
-    respvalues["db_running"] = True if ServiceMonitor('mariadb').is_active() else False
-    respvalues["tcp_3306_open"] = checktcpconnection(db_host,3306)
+    respvalues["3tapp_web_running"] = True if ServiceMonitor('3tapp-web').is_active() else False
+    respvalues["app_3002_open"] = checktcpconnection(app_host,3002)
+    respvalues["db_3306_open"] = checktcpconnection(db_host,3306)
+    respvalues["web_3000_open"] = checktcpconnection(web_host,3000)
     db_ping = pingcheck(db_host)
     respvalues["db_ping"] = db_ping if db_ping else False
     app_ping = pingcheck(app_host)

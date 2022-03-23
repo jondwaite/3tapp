@@ -4,10 +4,10 @@ Documentation=https://github.com/jondwaite/3tapp
 After=network.target
 
 [Service]
-Environment=NODE_PORT=3003
+Environment="PORT=3003"
 Type=simple
 User=photon
-ExecStart=/usr/bin/node /home/photon/3tapp/app/status/status.js
+ExecStart=/home/photon/3tapp/app/status/statusapi.py
 Restart=on-failure
 
 [Install]
