@@ -73,6 +73,9 @@ export interface result {
 export class ApiService {
 
   private REST_API_SERVER = `http://${environment.APP_IPADDR}:3002`;
+  private DB_STATUS_SERVER = `http://${environment.DB_HOSTNAME}:3004`;
+  private APP_STATUS_SERVER = `http://${environment.APP_HOSTNAME}:3003`;
+  private WEB_STATUS_SERVER = `http://${environment.WEB_HOSTNAME}:3001`;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -107,4 +110,17 @@ export class ApiService {
   GetFromName(driverName: string): Observable<any[]>{
     return this.httpClient.get<any[]>(this.REST_API_SERVER + '/imagelink/' + driverName);
   }
+
+  GetStatusDb(): Observable<any[]>{
+    return this.httpClient.get<any[]>(this.DB_STATUS_SERVER);
+  }
+
+  GetStatusApp(): Observable<any[]>{
+    return this.httpClient.get<any[]>(this.APP_STATUS_SERVER);
+  }
+
+  GetStatusWeb(): Observable<any[]>{
+    return this.httpClient.get<any[]>(this.WEB_STATUS_SERVER);
+  }
+
 }

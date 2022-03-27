@@ -4,9 +4,9 @@ Documentation=https://github.com/jondwaite/3tapp
 After=network.target
 
 [Service]
-Environment="PORT=3003"
+Environment=PORT=3003
 Type=simple
-User=photon
+User=root
 ExecStart=/home/photon/3tapp/app/status/statusapi.py
 Restart=on-failure
 

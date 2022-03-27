@@ -1,0 +1,96 @@
+<h2>Web Server ({{webhost}})</h2>
+
+<div *ngIf="this.webStatus; else loading">
+  <div class="datatable">
+    <table mat-table [dataSource]="webStatus" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="item">
+        <th mat-header-cell *matHeaderCellDef>Item</th>
+        <td mat-cell *matCellDef="let element">{{element.item}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.value}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.status}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="desired">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.desired}}</td>
+      </ng-container>
+
+      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+    </table>
+  </div>
+</div>
+
+<h2>Application Server ({{apphost}})</h2>
+
+<div *ngIf="this.appStatus; else loading">
+  <div class="datatable">
+    <table mat-table [dataSource]="appStatus" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="item">
+        <th mat-header-cell *matHeaderCellDef>Item</th>
+        <td mat-cell *matCellDef="let element">{{element.item}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.value}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.status}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="desired">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.desired}}</td>
+      </ng-container>
+
+      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+    </table>
+  </div>
+</div>
+
+<h2>Database Server ({{dbhost}})</h2>
+
+<div *ngIf="this.dbStatus; else loading">
+  <div class="datatable">
+    <table mat-table [dataSource]="dbStatus" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="item">
+        <th mat-header-cell *matHeaderCellDef>Item</th>
+        <td mat-cell *matCellDef="let element">{{element.item}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.value}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.status}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="desired">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">{{element.desired}}</td>
+      </ng-container>
+
+      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+    </table>
+  </div>
+</div>
+<ng-template #loading><p>Loading...</p></ng-template>

@@ -7,6 +7,11 @@
 
     <table mat-table [dataSource]="data" matSort class="mat-elevation-z8">
 
+        <ng-container matColumnDef="driverId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+            <td mat-cell *matCellDef="let element">{{element.driverId}}</td>
+        </ng-container>
+
         <ng-container matColumnDef="forename">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
             <td mat-cell *matCellDef="let element">{{element.forename}}</td>
@@ -48,7 +53,7 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true" ></tr>
-        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay;" (click)="navigateTo(myRowData)"></tr>
 
     </table>
     <mat-paginator [pageSizeOptions]="[10, 20, 50]" pageSize="20" showFirstLastButtons></mat-paginator>

@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/shared/api.service';
 
 export interface TableData {
@@ -15,7 +16,7 @@ export interface TableData {
 export class DriverdetailComponent implements OnInit {
 
   driverId: number;
-  private sub: any;
+  private sub: Subscription;
   driverData: any;
   tableData: TableData[];
   columnsToDisplay = ['item','value'];
@@ -59,18 +60,10 @@ export class DriverdetailComponent implements OnInit {
       this.apiService.GetFromName(urlName).subscribe((imagedata: any) => {
         this.imageData = imagedata;
       })
-
     });
-
-
-
-
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
-
-
 }

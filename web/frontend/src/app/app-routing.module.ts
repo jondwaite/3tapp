@@ -7,6 +7,7 @@ import { DriversComponent } from './modules/drivers/drivers.component';
 import { RacesComponent } from './modules/races/races.component';
 import { ResultsComponent } from './modules/results/results.component';
 import { ConstructorsComponent } from './modules/constructors/constructors.component';
+import { StatusComponent } from './modules/status/status.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'results',
     component: ResultsComponent
+  },
+  {
+    path: 'statuspage',
+    component: StatusComponent
   }]
 }];
 

@@ -1,14 +1,14 @@
 <div *ngIf="this.driverData; else loading">
 
-  <h1>{{this.driverData.forename + ' ' + this.driverData.surname}}</h1>
-
-  <div *ngIf="this.imageData; else searching">
-    <img class="picture" src="{{this.imageData.url}}">
+  <div class="nav">
+    <a routerLink="/drivers"><mat-icon>arrow_back_ios</mat-icon></a>
   </div>
 
-  <!-- <div class="picture">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/320px-Lewis_Hamilton_2016_Malaysia_2.jpg" height="200">
-  </div> -->
+  <h1>{{this.driverData.forename + ' ' + this.driverData.surname}}</h1>
+
+  <div *ngIf="this.imageData.url">
+    <img class="picture" src="{{this.imageData.url}}">
+  </div>
 
   <table mat-table [dataSource]="tableData" class="mat-elevation-z8">
 
@@ -28,4 +28,4 @@
 
 </div>
 <ng-template #loading><p>Loading...</p></ng-template>
-<ng-template #searching><p>No image found</p></ng-template>
+

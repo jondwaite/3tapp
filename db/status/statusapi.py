@@ -2,6 +2,7 @@
 
 import os
 import flask
+from flask_cors import CORS
 import subprocess
 import socket
 import time
@@ -73,6 +74,7 @@ port = os.environ['PORT']
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = False
+CORS(app)
 
 # Use .env file to get hostnames for each component:
 load_dotenv()
@@ -108,11 +110,12 @@ def home():
     respvalues["app_ping"] = app_ping if app_ping else False
     web_ping = pingcheck(web_host)
     respvalues["web_ping"] = web_ping if web_ping else False
+    respvalues["web_80_open"] = checktcpconnection(web_host,80)
+    respvalues["app_3002_open"] = checktcpconnection(app_host,3002)
+    respvalues["web_3000_open"] = checktcpconnection(web_host,3000)
 
     response = flask.make_response(
-        flask.jsonify(
-            {"status": respvalues}
-        ),200
+        flask.jsonify({"status": respvalues})
     )
     response.headers["Content-Type"] = "application/json"
     return response

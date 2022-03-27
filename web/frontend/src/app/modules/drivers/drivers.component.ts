@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService, driver } from '../../shared/api.service';
+import { Router } from '@angular/router';
 
 /*
 Drivers Table Schema
@@ -34,7 +35,7 @@ export class DriversComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private router: Router) {
 
     this.apiService.GetDrivers().subscribe(x => {
       this.data = new MatTableDataSource<driver>(x);
@@ -52,6 +53,10 @@ export class DriversComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.data.filter = filterValue.trim().toLowerCase();
+  }
+
+  navigateTo(row: any) {
+    this.router.navigate(['/driverdetail/'+row.driverId]);
   }
 
   getCurrentAge(dob: Date) {

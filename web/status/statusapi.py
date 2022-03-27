@@ -2,6 +2,7 @@
 
 import os
 import flask
+from flask_cors import CORS
 import subprocess
 import socket
 import time
@@ -73,6 +74,7 @@ port = os.environ['PORT']
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = False
+CORS(app)
 
 # Use .env file to get hostnames for each component:
 load_dotenv()
@@ -80,7 +82,7 @@ db_host = os.getenv('DB_HOSTNAME')
 app_host = os.getenv('APP_HOSTNAME')
 web_host = os.getenv('WEB_HOSTNAME')
 
-# Make sure all our hosts are available in DNS before proceeding:
+# Make sure all hosts are available in DNS before proceeding:
 while not (hostname_resolves(db_host)):
     time.sleep(5)
     reset_dns_cache()
@@ -101,6 +103,8 @@ def home():
     respvalues["role"] = 'web'
     respvalues["uptime"] = uptime()
     respvalues["3tapp_web_running"] = True if ServiceMonitor('3tapp-web').is_active() else False
+    respvalues["nginx_running"] = True if ServiceMonitor('nginx').is_active() else False
+    respvalues["web_80_open"] = checktcpconnection(web_host,80)
     respvalues["app_3002_open"] = checktcpconnection(app_host,3002)
     respvalues["db_3306_open"] = checktcpconnection(db_host,3306)
     respvalues["web_3000_open"] = checktcpconnection(web_host,3000)
