@@ -16,15 +16,19 @@
 
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef>Value</th>
-        <td mat-cell *matCellDef="let element">{{element.status}}</td>
+        <td mat-cell *matCellDef="let element">
+          <div *ngIf="element.class">
+            <mat-icon>{{element.status ? 'check_circle' : 'highlight_off'}}</mat-icon>
+          </div>
+        </td>
       </ng-container>
 
-      <ng-container matColumnDef="desired">
+      <ng-container matColumnDef="class">
         <th mat-header-cell *matHeaderCellDef>Value</th>
-        <td mat-cell *matCellDef="let element">{{element.desired}}</td>
+        <td mat-cell *matCellDef="let element">{{element.class}}</td>
       </ng-container>
 
-      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+      <tr class="{{myRowData.class}}" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 
     </table>
   </div>
@@ -48,15 +52,19 @@
 
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef>Value</th>
-        <td mat-cell *matCellDef="let element">{{element.status}}</td>
+        <td mat-cell *matCellDef="let element">
+          <div *ngIf="element.class">
+            <mat-icon>{{element.status ? 'check_circle' : 'highlight_off'}}</mat-icon>
+          </div>
+        </td>
       </ng-container>
 
-      <ng-container matColumnDef="desired">
+      <ng-container matColumnDef="class">
         <th mat-header-cell *matHeaderCellDef>Value</th>
-        <td mat-cell *matCellDef="let element">{{element.desired}}</td>
+        <td mat-cell *matCellDef="let element">{{element.class}}</td>
       </ng-container>
 
-      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+      <tr class="{{myRowData.class}}" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 
     </table>
   </div>
@@ -80,15 +88,19 @@
 
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef>Value</th>
-        <td mat-cell *matCellDef="let element">{{element.status}}</td>
+        <td mat-cell *matCellDef="let element">
+          <div *ngIf="element.class">
+            <mat-icon>{{element.status ? 'check_circle' : 'highlight_off'}}</mat-icon>
+          </div>
+        </td>
       </ng-container>
 
-      <ng-container matColumnDef="desired">
+      <ng-container matColumnDef="class">
         <th mat-header-cell *matHeaderCellDef>Value</th>
-        <td mat-cell *matCellDef="let element">{{element.desired}}</td>
+        <td mat-cell *matCellDef="let element">{{element.class}}</td>
       </ng-container>
 
-      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+      <tr class="{{myRowData.class}}" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 
     </table>
   </div>

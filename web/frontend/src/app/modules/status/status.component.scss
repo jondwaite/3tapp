@@ -13,9 +13,9 @@ h2 {
   padding-right: 10px;
 }
 
-.mat-table {
-  width: 100%;
-}
+// .mat-table {
+//   width: 100%;
+// }
 
 .mat-table-row {
   width: 100%;
@@ -23,4 +23,21 @@ h2 {
 
 .mat-column-item {
   width: 200px;
+}
+
+.mat-column-value {
+  width: 200px;
+}
+
+.mat-column-status {
+  width: 25px;
+  text-align: center;
+}
+
+.warn {
+  background-color: rgb(255, 182, 182);
+}
+
+.ok {
+  background-color: rgb(201, 255, 199);
 }
