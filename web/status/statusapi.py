@@ -9,7 +9,7 @@ import time
 from ping3 import ping
 from dotenv import load_dotenv
 
-# pip3 install list:
+# pip3 install list for automation:
 # - Flask
 # - ping3
 # - python-dotenv
