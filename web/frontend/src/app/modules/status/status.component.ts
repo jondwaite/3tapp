@@ -52,12 +52,6 @@ export class StatusComponent implements OnInit {
       // console.log('dbData:' + JSON.stringify(this.dbData));
       this.dbStatus = [
         {
-          item: 'Uptime',
-          value: this.dbData['uptime'],
-          status: null,
-          class: null
-        },
-        {
           item: 'Database Service',
           value: this.dbData['db_running'] ? 'Running' : 'Stopped',
           status: this.dbData['db_running'],
@@ -101,12 +95,6 @@ export class StatusComponent implements OnInit {
       // console.log('appData:' + JSON.stringify(this.appData));
       this.appStatus = [
         {
-          item: 'Uptime',
-          value: this.appData['uptime'],
-          status: null,
-          class: null,
-        },
-        {
           item: 'API Service',
           value: this.appData['3tapp_app_running'] ? 'Running' : 'Stopped',
           status: this.appData['3tapp_app_running'],
@@ -149,12 +137,6 @@ export class StatusComponent implements OnInit {
       this.webData = x['status'];
       // console.log('webData:' + JSON.stringify(this.webData));
       this.webStatus = [
-        {
-          item: 'Uptime',
-          value: this.webData['uptime'],
-          status: null,
-          class: null,
-        },
         {
           item: 'Nginx Service',
           value: this.webData['nginx_running'] ? 'Running' : 'Stopped',
