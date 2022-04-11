@@ -8,8 +8,8 @@
 # USERNAME=photon               // User to be created to run services
 # PASSWORD=<password>           // Password to be assigned to this user
 # SSHKEY=<ssh key>              // Public key to be added to this user (optional)
-# DBUSER=photon                 // Database username to be created in MariaDB
-# DBPASS=<db password>          // Password to be used for the database
+# DB_USER=photon                 // Database username to be created in MariaDB
+# DB_PASS=<db password>          // Password to be used for the database
 # DOMAIN=<DNS Domain>           // DNS Domain to be used for name resolution
 # DB_HOSTNAME=<hostname or IP address of DB server>
 # APP_HOSTNAME=<hostname or IP address of App server>
@@ -17,7 +17,7 @@
 # PROJECT=<project name>        // Should be one of 'Production', 'Development' or 'Test' for recognition in app
 # DEPLOYMENT=<deployment name>  // Should be the 'root' of the hostname (e.g. 'dev01' if the database server is 'dev01-db')
 
-if [ ! -f ./env ]; then
+if [ ! -f ./.env ]; then
     echo "You must create a file .env in this directory before running this script."
     echo "See comments in db-node.sh for the required entries in this file."
     echo "Exiting"
