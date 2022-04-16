@@ -4,8 +4,10 @@ const pool = mariadb.createPool(config.db);
 
 async function query(sql, params) {
     const connection = await pool.getConnection();
-    const results = await connection.query(sql);
-    connection.end();
+    const res = connection.query(sql);
+    connection.release();
+    
+    let results = await res;
 
     return results;
 }

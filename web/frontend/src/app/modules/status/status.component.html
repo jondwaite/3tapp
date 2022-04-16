@@ -1,4 +1,4 @@
-<table>
+<table class="statustable">
 
   <tr>
     <th><h2>Web Server ({{webhost}})</h2></th>
@@ -23,7 +23,7 @@
               <td mat-cell *matCellDef="let element"><p class="{{element.class}}">{{element.value}}</p></td>
             </ng-container>
 
-            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay" class="tablerow"></tr>
 
           </table>
         </div>
@@ -45,7 +45,7 @@
               <td mat-cell *matCellDef="let element"><p class="{{element.class}}">{{element.value}}</p></td>
             </ng-container>
 
-            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay" class="tablerow"></tr>
 
           </table>
         </div>
@@ -67,7 +67,7 @@
               <td mat-cell *matCellDef="let element"><p class="{{element.class}}">{{element.value}}</p></td>
             </ng-container>
 
-            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay" class="tablerow"></tr>
 
           </table>
         </div>
